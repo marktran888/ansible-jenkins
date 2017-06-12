@@ -1,0 +1,9 @@
+--- # Playbook to configure jenkins server
+- hosts: local
+  become: true
+  remote_user: ansible
+  tasks:
+    - name: whoami
+      command: "whoami"
+      register: whoami
+    - debug: var=whoami
